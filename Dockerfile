@@ -18,3 +18,5 @@ WORKDIR /srv/IHaskell
 RUN stack setup
 RUN stack build
 RUN stack install
+
+WORKDIR /tmp
