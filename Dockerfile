@@ -17,7 +17,10 @@ RUN git clone --depth=1 --branch=master https://github.com/gibiansky/IHaskell.gi
 WORKDIR /srv/IHaskell
 RUN stack setup
 
-RUN LANG=en_US.UTF-8 stack build
-RUN LANG=en_US.UTF-8 stack install
+EXPORT LANG en_US.UTF-8
+
+RUN locale
+RUN stack build
+RUN stack install
 
 WORKDIR /tmp
